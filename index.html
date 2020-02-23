@@ -1,20 +1,25 @@
 <html lang='en'>
   <head>
-    <title>Dungeondraft</title>
     <link href="https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeondraft</title>
+
     <style>
       body 
       {
         background-color: #282219;
       }
-      p {
+      p
+      {
         color: #efe6c8;
         text-align: center;
         font-family: 'Major Mono Display';
         font-size: 10em;
         margin-top: 0px;
       }
-      .center {
+      .center
+      {
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -38,7 +43,8 @@
         document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
         + minutes + "m " + "<div style='display:inline-block;color:#e9953b'>" + seconds + "s</div>";
 
-        if (distance < 0) {
+        if (distance < 0)
+        {
           clearInterval(x);
           document.getElementById("countdown").innerHTML = "LAUNCH IMMINENT";
         }
