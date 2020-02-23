@@ -6,6 +6,13 @@
       {
         background-color: #282219;
       }
+      p {
+        color: #efe6c8;
+        text-align: center;
+        font-family: 'Major Mono Display';
+        font-size: 6em;
+        margin-top: 0px;
+      }
       .center {
         display: block;
         margin-left: auto;
@@ -13,18 +20,26 @@
         width: 50%;
       }
     </style>
-    <script>
-      (function(d, s, id)
-       {
-        var js, pjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//www.tickcounter.com/static/js/loader.js"; pjs.parentNode.insertBefore(js, pjs);
-      }
-      (document, "script", "tickcounter-sdk"));
-    </script>
   </head>
   <body bgcolor=''>
     <img src='images/splash.png' class='center'/>
-    <div data-type="countdown" data-id="1794606" class="tickcounter" style="width: 100%; position: relative; padding-bottom: 25%"></div>
+    <script>
+    var countDownDate = new Date("Feb 25, 2020 18:00:00 CST").getTime();
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + "<div style='display:inline-block;color:#e9953b'>" + seconds + "s</div>";
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "LAUNCH IMMINENT";
+      }
+    }, 1000);
+</script>
 </html>
