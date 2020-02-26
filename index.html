@@ -1,54 +1,80 @@
 <html lang='en'>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap'  rel='stylesheet' type='text/css' media='all'>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Dungeondraft</title>
-    <link href='https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap' rel='stylesheet' type='text/css' media='all' >
     <style>
       body 
       {
         background-color: #282219;
-      }
-      p
-      {
+        font-family: 'Roboto Slab';
+        font-size: 1.5em;
         color: #efe6c8;
-        text-align: center;
-        font-family: 'Major Mono Display';
-        font-size: 4vw;
-        margin-top: 0px;
+      }
+      h2
+      {
+         font-size: 1.75em;
+    	 color:#e9953b;
+      }
+      .splash
+      {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        width: 50%;
+        max-width: 750px;
       }
       .center
       {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 50%;
+        width: 80%;
         height: auto;
-        max-width: 750px;
+      }
+      .innercenter
+      {
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
       }
     </style>
   </head>
   <body>
-    <img src='images/splash.png' class='center'/>
-    <p id='countdown'></p>
-    <script>
-      var countDownDate = new Date("Feb 25, 2020 18:00:00 CST").getTime();
-      var x = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-        + minutes + "m " + "<div style='display:inline-block;color:#e9953b'>" + seconds + "s</div>";
-
-        if (distance < 0)
-        {
-          clearInterval(x);
-          document.getElementById("countdown").innerHTML = "LAUNCH IMMINENT";
-        }
-      }, 1000);
-     </script>
+    <div class='center'>
+      <img src='images/splash.png' class='splash'/>
+      <h2>Trailer</h2>
+      <iframe src='https://www.youtube.com/embed/lFwp-SBhXzc' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen style='width:100%;height:100%'></iframe>
+      <div class='innercenter'>
+        <h2>Features</h2>
+        <ul class='features'>
+          <li>Unintimidating UI</li>
+          <li>Clean, appealing art style</li>
+          <li>Intuitive tools and fast workflow</li>
+          <li>Smart tiling system</li>
+          <li>Smart object scattering</li>
+          <li>Paint landscape</li>
+          <li>Built-in lighting system</li>
+          <li>Built-in dungeon and cave generator</li>
+          <li>No internet required to use, DRM-free</li>
+          <li>No subscriptions</li>
+          <li>No additional commercial licensing</li>
+          <li>Tag system for objects</li>
+          <li>Printer-friendly export filter</li>
+        </ul>
+        <h2>Minimum Requirements</h2>
+        <ul class='requirements'>
+          <li><b>OS:</b> Windows 10 64-bit</li>
+          <li><b>Processor:</b> Intel Core i3 2.6 GHz</li>
+          <li><b>Graphics:</b> Intel HD Graphics 6000</li>
+          <li><b>Memory:</b> 4 GB RAM</li>
+          <li><b>Storage:</b> 150 MB available space</li>
+          <li><b>Input:</b> Mouse</li>
+        </ul>
+	    <br/><br/>
+        <iframe class='innercenter' frameborder='0' height='377' scrolling='no' src='https://www.humblebundle.com/widget/v2/product/dungeondraft/EA3odN1juo?theme=light' style='border: none;' width='720'></iframe>
+      </div>
+    </div>
 </html>
