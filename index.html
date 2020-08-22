@@ -41,7 +41,8 @@
         margin-right: auto;
       }
       .embedded-video {
-        padding-bottom: 2vw;
+	width: 100%;
+        padding-bottom: 56.25%;
       }
     </style>
   </head>
@@ -49,7 +50,9 @@
     <div class='center'>
         <img src='images/splash.png' class='splash'/>
         <h2>Beta Trailer</h2>
-        <iframe class='embedded-video' src='https://www.youtube.com/embed/LYTHVRpihKg' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen style='width:100%;height:100%'></iframe>
+	<div class='embedded-video'>
+          <iframe src='https://www.youtube.com/embed/LYTHVRpihKg' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen style='width:100%;height:100%'></iframe>
+	/div>
 	<div class='innercenter'>
         <h2>Features</h2>
         <ul class='features'>
