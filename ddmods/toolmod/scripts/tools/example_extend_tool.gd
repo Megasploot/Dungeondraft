@@ -11,6 +11,9 @@ func start():
     # moving a button from the bottom to the top of the panel
     tool_panel.Align.move_child(button, 0)
     button.connect("pressed", self, "straighten")
+    var button2 = tool_panel.CreateButton("Select All Objects", Global.Root + "icons/question.png")
+    tool_panel.Align.move_child(button2, 1)
+    button2.connect("pressed", self, "select_all_objects")
     # cache the select tool to make it easier to reference in this script
     select_tool = Global.Editor.Tools["SelectTool"]
 
@@ -41,3 +44,8 @@ func straighten():
         for thing in select_tool.Selectables:
             if select_tool.Selectables[thing] == 4:
                 thing.global_position.x = average.x
+
+func select_all_objects():
+    for object in Global.World.GetLevelByID(Global.World.CurrentLevelId).Objects.get_children():
+        select_tool.SelectThing(object, true)
+    select_tool.EnableTransformBox(true)
