@@ -27,12 +27,12 @@ func update(delta):
 func straighten():
     # Selected is an array of selected objects
     print(select_tool.Selected)
-    print("TEST3")
     # Selectables is a dictionary of the selected objects as keys and their types as values
     var average = Vector2.ZERO
     var count = 0
     for thing in select_tool.Selectables:
         print(select_tool.Selectables[thing])
+        print(thing.get_meta("node_id"))
         # 4 is object types
         if select_tool.Selectables[thing] == 4:
             average += thing.global_position
@@ -49,3 +49,7 @@ func select_all_objects():
     for object in Global.World.GetLevelByID(Global.World.CurrentLevelId).Objects.get_children():
         select_tool.SelectThing(object, true)
     select_tool.EnableTransformBox(true)
+    # if only a single object was selected, let the tool panel know to update its controls
+    if select_tool.Selectables.size() == 1:
+        var type = select_tool.Selectables.values()[0]
+        Global.Editor.Toolset.GetToolPanel("SelectTool").OnSelect(type)
