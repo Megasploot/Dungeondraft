@@ -25,12 +25,12 @@ func start():
     labeled_dropdown_menu.connect("item_selected", self, "on_labeled_dropdown_select")
     var layer_menu = tool_panel.CreateLayerMenu()
     # can be used like a regular tool panel and forwards changes to the tool
-    var rightside_panel = tool_panel.CreateRightsidePanel("Rightside");
+    var rightside_panel = tool_panel.CreateRightsidePanel("Rightside")
 
     # file selection is special, and emits signals called on_file_selected and on_file_cleared automatically
-    var win_img_filter = "All Images,*.png;*.jpg;*jpeg,PNG (*.png),*.png,JPEG (*.jpg),*.jpg;*jpeg";
-    var osx_img_filter = "jpg,png";
-    var linux_img_filter = "*.jpg *.png";
+    var win_img_filter = "All Images,*.png;*.jpg;*jpeg,PNG (*.png),*.png,JPEG (*.jpg),*.jpg;*jpeg"
+    var osx_img_filter = "jpg,png"
+    var linux_img_filter = "*.jpg *.png"
     var img_filter = null
     match OS.get_name():
         "Windows":
@@ -53,7 +53,7 @@ func start():
     var colors = ["eccd8b", "eaefca", "80beff", "ffad58", "4dd569"]
     # color palette automatically emits a signal called on_color_change for single select and on_colors_change for multiselect
     var color_palette = tool_panel.CreateColorPalette("ColorPaletteID", false, "eccd8b", colors, true, true)
-    var texture_menu = tool_panel.CreateTextureGridMenu("PortalTexture", "Portals", true);
+    var texture_menu = tool_panel.CreateTextureGridMenu("PortalTexture", "Portals", true)
 
 func on_button_press():
     print("Button pressed")
