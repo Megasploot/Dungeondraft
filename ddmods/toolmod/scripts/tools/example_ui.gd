@@ -24,6 +24,8 @@ func start():
     var labeled_dropdown_menu = tool_panel.CreateLabeledDropdownMenu("DropdownMenuID", "Dropdown Menu", ["Option 1", "Option 2", "Option 3"], "Option 3")
     labeled_dropdown_menu.connect("item_selected", self, "on_labeled_dropdown_select")
     var layer_menu = tool_panel.CreateLayerMenu()
+    # can be used like a regular tool panel and forwards changes to the tool
+    var rightside_panel = tool_panel.CreateRightsidePanel("Rightside");
 
     # file selection is special, and emits signals called on_file_selected and on_file_cleared automatically
     var win_img_filter = "All Images,*.png;*.jpg;*jpeg,PNG (*.png),*.png,JPEG (*.jpg),*.jpg;*jpeg";
