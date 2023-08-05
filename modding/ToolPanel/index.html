@@ -1,0 +1,795 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>ToolPanel - Dungeondraft Modding API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../wiki.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#toolpanel" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Dungeondraft Modding API" class="md-header__button md-logo" aria-label="Dungeondraft Modding API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dungeondraft Modding API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ToolPanel
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Dungeondraft Modding API" class="md-nav__button md-logo" aria-label="Dungeondraft Modding API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Dungeondraft Modding API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ToolPanel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        ToolPanel
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#property-descriptions" class="md-nav__link">
+    Property Descriptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-descriptions" class="md-nav__link">
+    Method Descriptions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="toolpanel">ToolPanel</h1>
+<p><strong>Extends:</strong> <a href="https://docs.godotengine.org/en/3.4/classes/class_scrollcontainer.html">ScrollContainer</a></p>
+<h2 id="description">Description</h2>
+<p>ToolPanel is the class representing the UI controls on the left side of the Dungeondraft interface.
+Every single tool in Dungeondraft, including new ones you create through Global.Editor.CreateModTool() is associated with a ToolPanel.
+This is the primary way a tool displays options available to a cartographer.
+The main concern for the modder should be creating new UI controls and associating any options or functionality to them.
+Whenever you see the property variable in a UI creation method, it automatically modifies that property in the associated Tool.</p>
+<p>To see how to use a ToolPanel instance, check out this example script: <a href="https://github.com/Megasploot/Dungeondraft/blob/master/ddmods/toolmod/scripts/tools/example_ui.gd">Example UI Script</a></p>
+<h2 id="properties">Properties</h2>
+<p>
+<table>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_vboxcontainer.html"><span class="type">VBoxContainer</span></a> </td>
+<td><span class="property">Align</span> </td>
+</tr>
+<tr>
+<td><span class="var">???</span> </td>
+<td><span class="property">Tool</span> </td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> </td>
+<td><span class="property">UsesObjectLibrary</span> </td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> </td>
+<td><span class="property">UsesPathLibrary</span> </td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> </td>
+<td><span class="property">UsesModRightsidePanel</span> </td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> </td>
+<td><span class="property">IsRightsidePanel</span> </td>
+</tr>
+</table>
+</p>
+<h2 id="methods">Methods</h2>
+<p>
+<table>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_vboxcontainer.html"><span class="type">VBoxContainer</span></a></td>
+<td><a href="#BeginSection"><span class="method">BeginSection</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">stretch</span> = <span class="default">true</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_vboxcontainer.html"><span class="type">VBoxContainer</span></a></td>
+<td><a href="#BeginNamedSection"><span class="method">BeginNamedSection</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">name</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">stretch</span> = <span class="default">true</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#EndSection"><span class="method">EndSection</span></a> <span class="bracket">( )</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_button.html"><span class="type">Button</span></a></td>
+<td><a href="#CreateButton"><span class="method">CreateButton</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">label</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">icon</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_button.html"><span class="type">Button</span></a></td>
+<td><a href="#CreateToggle"><span class="method">CreateToggle</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">default</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">onLabel</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">onIcon</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">offLabel</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">offIcon</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#CreateSharedToggle"><span class="method">CreateSharedToggle</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">label</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">default</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">icon</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_buttongroup.html"><span class="type">ButtonGroup</span></a> <span class="param">group</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#CreateToggleGroup"><span class="method">CreateToggleGroup</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">options</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">labels</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">icons</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_int.html"><span class="type">int</span></a> <span class="param">default</span> = <span class="default">0</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_checkbutton.html"><span class="type">CheckButton</span></a></td>
+<td><a href="#CreateCheckButton"><span class="method">CreateCheckButton</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">label</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">default</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#CreateLabel"><span class="method">CreateLabel</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">label</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#CreateSeparator"><span class="method">CreateSeparator</span></a> <span class="bracket">( )</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#CreateNote"><span class="method">CreateNote</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">text</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a></td>
+<td><a href="#CreateRadioMenu"><span class="method">CreateRadioMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">options</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_optionbutton.html"><span class="type">OptionButton</span></a></td>
+<td><a href="#CreateDropdownMenu"><span class="method">CreateDropdownMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">options</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">default</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_optionbutton.html"><span class="type">OptionButton</span></a></td>
+<td><a href="#CreateLabeledDropdownMenu"><span class="method">CreateLabeledDropdownMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">label</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">options</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">default</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_optionbutton.html"><span class="type">OptionButton</span></a></td>
+<td><a href="#CreateLayerMenu"><span class="method">CreateLayerMenu</span></a> <span class="bracket">( )</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#CreateIconMenu"><span class="method">CreateIconMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_int.html"><span class="type">int</span></a> <span class="param">default</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">options</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">sizeControl</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_buttongroup.html"><span class="type">ButtonGroup</span></a> <span class="param">group</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_hslider.html"><span class="type">HSlider</span></a></td>
+<td><a href="#CreateSlider"><span class="method">CreateSlider</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">default</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">minimum</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">maximum</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">step</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">exponential</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_object.html"><span class="type">Object</span></a></td>
+<td><a href="#CreateRange"><span class="method">CreateRange</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">minimum</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">maximum</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">step</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">minDefault</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">maxDefault</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#CreateFileSelector"><span class="method">CreateFileSelector</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">filter</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">directory</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_colorpickerbutton.html"><span class="type">ColorPickerButton</span></a></td>
+<td><a href="#CreateColorButton"><span class="method">CreateColorButton</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">name</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">propertyOnly</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">default</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">presets</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_object.html"><span class="type">Object</span></a></td>
+<td><a href="#CreateColorPalette"><span class="method">CreateColorPalette</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">name</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">propertyOnly</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">default</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">presets</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">multiselect</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">initToolColor</span> = <span class="default">true</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#CreateTextureListMenu"><span class="method">CreateTextureListMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">textures</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">labels</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_object.html"><span class="type">Object</span></a></td>
+<td><a href="#CreateTextureGridMenu"><span class="method">CreateTextureGridMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">textureCategory</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">showsPreview</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_object.html"><span class="type">Object</span></a></td>
+<td><a href="#CreateWideTextureGridMenu"><span class="method">CreateWideTextureGridMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">textureCategory</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">showsPreview</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#CreateTilesetMenu"><span class="method">CreateTilesetMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#CreateTerrainListMenu"><span class="method">CreateTerrainListMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#CreateExpandSlotsButton"><span class="method">CreateExpandSlotsButton</span></a> <span class="bracket">( )</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_object.html"><span class="type">Object</span></a></td>
+<td><a href="#CreateTagsPanel"><span class="method">CreateTagsPanel</span></a> <span class="bracket">( )</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#UpdateToggleVisuals"><span class="method">UpdateToggleVisuals</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">value</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_button.html"><span class="type">Button</span></a> <span class="param">toggle</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">onLabel</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_texture.html"><span class="type">Texture</span></a> <span class="param">onIcon</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">offLabel</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_texture.html"><span class="type">Texture</span></a> <span class="param">offIcon</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/3.4/classes/class_object.html"><span class="type">Object</span></a></td>
+<td><a href="#CreateRightsidePanel"><span class="method">CreateRightsidePanel</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">title</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#ForwardMethod"><span class="method">ForwardMethod</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">method</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#ForwardProperty"><span class="method">ForwardProperty</span></a> <span class="bracket">(</span> <span class="param">value</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span> <span class="bracket">)</span></td>
+</tr>
+<tr>
+<td><span class="void">void</span></td>
+<td><a href="#ForwardProperty_Enum"><span class="method">ForwardProperty_Enum</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">value</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span> <span class="bracket">)</span></td>
+</tr>
+</table>
+</p>
+<h2 id="property-descriptions">Property Descriptions</h2>
+<ul>
+<li><span><a href="https://docs.godotengine.org/en/3.4/classes/class_vboxcontainer.html"><span class="type">VBoxContainer</span></a> <span class="property">Align</span></span>: <br>
+<span class="desc">
+This is the control that every UI control is attached to unless inside a section.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span><span class="property">Tool</span></span>: <br>
+<span class="desc">
+This is the control that every UI control is attached to unless inside a section.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span><a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="property">UsesObjectLibrary</span></span>: <br>
+<span class="desc">
+Test
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span><a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="property">UsesPathLibrary</span></span>: <br>
+<span class="desc">
+Test
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span><a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="property">UsesModRightsidePanel</span></span>: <br>
+<span class="desc">
+Test
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span><a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="property">IsRightsidePanel</span></span>: <br>
+<span class="desc">
+Test
+</span></li>
+</ul>
+<h2 id="method-descriptions">Method Descriptions</h2>
+<ul>
+<li><span id="BeginSection"><a href="https://docs.godotengine.org/en/3.4/classes/class_vboxcontainer.html"><span class="type">VBoxContainer</span></a> <a href="#BeginSection"><span class="method">BeginSection</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">stretch</span> = <span class="default">true</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Encloses all UI controls created afterwards inside a section. Must be closed with EndSection(). The parameter stretch causes the section to extend all the way to the bottom of the panel.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="BeginNamedSection"><a href="https://docs.godotengine.org/en/3.4/classes/class_vboxcontainer.html"><span class="type">VBoxContainer</span></a> <a href="#BeginNamedSection"><span class="method">BeginNamedSection</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">name</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">stretch</span> = <span class="default">true</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Create a UI control section that can be referenced through Tool.Controls[name].
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="EndSection"><span class="void">void</span> <a href="#EndSection"><span class="method">EndSection</span></a> <span class="bracket">( )</span></span>: <br>
+<span class="desc">
+Ends the section and all UI controls created afterwards will not be included in the previous section.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateButton"><a href="https://docs.godotengine.org/en/3.4/classes/class_button.html"><span class="type">Button</span></a> <a href="#CreateButton"><span class="method">CreateButton</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">label</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">icon</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates and returns a Godot Button with label as display text and icon_path as the path to the icon displayed.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateToggle"><a href="https://docs.godotengine.org/en/3.4/classes/class_button.html"><span class="type">Button</span></a> <a href="#CreateToggle"><span class="method">CreateToggle</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">default</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">onLabel</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">onIcon</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">offLabel</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">offIcon</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates and returns a toggle style Godot Button.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateSharedToggle"><span class="void">void</span> <a href="#CreateSharedToggle"><span class="method">CreateSharedToggle</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">label</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">default</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">icon</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_buttongroup.html"><span class="type">ButtonGroup</span></a> <span class="param">group</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates a radio style Godot Button and pass in a ButtonGroup to allow a radio toggle.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateToggleGroup"><span class="void">void</span> <a href="#CreateToggleGroup"><span class="method">CreateToggleGroup</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">options</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">labels</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">icons</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_int.html"><span class="type">int</span></a> <span class="param">default</span> = <span class="default">0</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates a set of radio toggle but looks like tabbed buttons. The Arrays are of type String.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateCheckButton"><a href="https://docs.godotengine.org/en/3.4/classes/class_checkbutton.html"><span class="type">CheckButton</span></a> <a href="#CreateCheckButton"><span class="method">CreateCheckButton</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">label</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">default</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates and returns a Godot CheckButton.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateLabel"><span class="void">void</span> <a href="#CreateLabel"><span class="method">CreateLabel</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">label</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates a label.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateSeparator"><span class="void">void</span> <a href="#CreateSeparator"><span class="method">CreateSeparator</span></a> <span class="bracket">( )</span></span>: <br>
+<span class="desc">
+Creates a horizontal separator.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateNote"><span class="void">void</span> <a href="#CreateNote"><span class="method">CreateNote</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">text</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates a framed label for a dev note.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateRadioMenu"><a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <a href="#CreateRadioMenu"><span class="method">CreateRadioMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">options</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates a radio menu and returns the array of all the CheckBox. The option Array are of type String.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateDropdownMenu"><a href="https://docs.godotengine.org/en/3.4/classes/class_optionbutton.html"><span class="type">OptionButton</span></a> <a href="#CreateDropdownMenu"><span class="method">CreateDropdownMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">options</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">default</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates and returns a Godot OptionButton (which is a dropdown menu) and autofill the menu with options.  The option Array are of type String.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateLabeledDropdownMenu"><a href="https://docs.godotengine.org/en/3.4/classes/class_optionbutton.html"><span class="type">OptionButton</span></a> <a href="#CreateLabeledDropdownMenu"><span class="method">CreateLabeledDropdownMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">label</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">options</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">default</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates a labelled dropdown menu. The option Array are of type String.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateLayerMenu"><a href="https://docs.godotengine.org/en/3.4/classes/class_optionbutton.html"><span class="type">OptionButton</span></a> <a href="#CreateLayerMenu"><span class="method">CreateLayerMenu</span></a> <span class="bracket">( )</span></span>: <br>
+<span class="desc">
+Creates and returns the dropdown menu representing the layer system for Objects, Paths, and Materials for Dungeondraft.
+There should only ever be a single instance of this UI control per tool if needed.
+To inspect the current selected layer, check the variable Global.Editor.Tools["mod_tool_id"].ActiveLayer which returns the int of the layer value.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateIconMenu"><span class="void">void</span> <a href="#CreateIconMenu"><span class="method">CreateIconMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_int.html"><span class="type">int</span></a> <span class="param">default</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">options</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">sizeControl</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_buttongroup.html"><span class="type">ButtonGroup</span></a> <span class="param">group</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Create a horizontal set of icon menu buttons like those used to select brush shapes. The option Array are of type String.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateSlider"><a href="https://docs.godotengine.org/en/3.4/classes/class_hslider.html"><span class="type">HSlider</span></a> <a href="#CreateSlider"><span class="method">CreateSlider</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">default</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">minimum</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">maximum</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">step</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">exponential</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates and returns a Godot HSlider. The exponential parameter is an option that makes the slider use an exponential scale.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateRange"><a href="https://docs.godotengine.org/en/3.4/classes/class_object.html"><span class="type">Object</span></a> <a href="#CreateRange"><span class="method">CreateRange</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">minimum</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">maximum</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">step</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">minDefault</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_float.html"><span class="type">float</span></a> <span class="param">maxDefault</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates and returns a Dungeondraft unique UI control RangeSlider. This control allows the user to pick a range of values instead of a single value.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateFileSelector"><span class="void">void</span> <a href="#CreateFileSelector"><span class="method">CreateFileSelector</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">filter</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">directory</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates a special UI control dedicated to selecting a file. The file_filter parameter is the file extension filter that is unique to each operating system. A modder needs to account for Windows, OSX, and Linux in the filter. The directory is the path to the default starting location for the file dialog that opens.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateColorButton"><a href="https://docs.godotengine.org/en/3.4/classes/class_colorpickerbutton.html"><span class="type">ColorPickerButton</span></a> <a href="#CreateColorButton"><span class="method">CreateColorButton</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">name</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">propertyOnly</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">default</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">presets</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Create a simple color selection control without a color palette. The presets Array are of type String.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateColorPalette"><a href="https://docs.godotengine.org/en/3.4/classes/class_object.html"><span class="type">Object</span></a> <a href="#CreateColorPalette"><span class="method">CreateColorPalette</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">name</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">propertyOnly</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">default</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">presets</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">multiselect</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">initToolColor</span> = <span class="default">true</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates and returns a Dungeondraft UI control called a ColorPalette and fills it through the presets array. The Strings should be in hex color code format. The presets Array are of type String.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateTextureListMenu"><span class="void">void</span> <a href="#CreateTextureListMenu"><span class="method">CreateTextureListMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">textures</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_array.html"><span class="type">Array</span></a> <span class="param">labels</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Create a texture selection menu in list format. No longer used/deprecated. The Arrays are of type String.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateTextureGridMenu"><a href="https://docs.godotengine.org/en/3.4/classes/class_object.html"><span class="type">Object</span></a> <a href="#CreateTextureGridMenu"><span class="method">CreateTextureGridMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">textureCategory</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">showsPreview</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates and returns a Godot GridMenu filled with assets from the specified Dungeondraft asset category.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateWideTextureGridMenu"><a href="https://docs.godotengine.org/en/3.4/classes/class_object.html"><span class="type">Object</span></a> <a href="#CreateWideTextureGridMenu"><span class="method">CreateWideTextureGridMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">textureCategory</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">showsPreview</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates and returns a Godot GridMenu in wide format filled with assets from the specified Dungeondraft asset category.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateTilesetMenu"><span class="void">void</span> <a href="#CreateTilesetMenu"><span class="method">CreateTilesetMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Generate the menu that displays the floor tile options.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateTerrainListMenu"><span class="void">void</span> <a href="#CreateTerrainListMenu"><span class="method">CreateTerrainListMenu</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Generate the menu to select Terrain options. Passes the index of the selected option to property.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateExpandSlotsButton"><span class="void">void</span> <a href="#CreateExpandSlotsButton"><span class="method">CreateExpandSlotsButton</span></a> <span class="bracket">( )</span></span>: <br>
+<span class="desc">
+Generate the CheckButton used to expand the Terrain slots.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateTagsPanel"><a href="https://docs.godotengine.org/en/3.4/classes/class_object.html"><span class="type">Object</span></a> <a href="#CreateTagsPanel"><span class="method">CreateTagsPanel</span></a> <span class="bracket">( )</span></span>: <br>
+<span class="desc">
+Generate the TagsPanel and adds it to the UI.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="UpdateToggleVisuals"><span class="void">void</span> <a href="#UpdateToggleVisuals"><span class="method">UpdateToggleVisuals</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_bool.html"><span class="type">bool</span></a> <span class="param">value</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_button.html"><span class="type">Button</span></a> <span class="param">toggle</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">onLabel</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_texture.html"><span class="type">Texture</span></a> <span class="param">onIcon</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">offLabel</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_texture.html"><span class="type">Texture</span></a> <span class="param">offIcon</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Update a toggle button's icons and labels.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="CreateRightsidePanel"><a href="https://docs.godotengine.org/en/3.4/classes/class_object.html"><span class="type">Object</span></a> <a href="#CreateRightsidePanel"><span class="method">CreateRightsidePanel</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">title</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Creates and returns a Dungeondraft right-side panel that behaves like the left-side tool panel and allows you to add more UI controls for your mod. Must be called from a ToolPanel you created for your mod tool, as it is registered to the tool. It will automatically open and close when your tool is selected. Only one is supported per tool. See <a href="https://github.com/Megasploot/Dungeondraft/blob/master/ddmods/toolmod/scripts/tools/example_ui.gd">Example UI Script</a> for a usage example.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="ForwardMethod"><span class="void">void</span> <a href="#ForwardMethod"><span class="method">ForwardMethod</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">method</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Helper function to forward a method invocation to the Tool. Not typically called manually.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="ForwardProperty"><span class="void">void</span> <a href="#ForwardProperty"><span class="method">ForwardProperty</span></a> <span class="bracket">(</span> <span class="param">value</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Helper function to forward a property change to the Tool. Not typically called manually.
+</span></li>
+</ul>
+<hr />
+<ul>
+<li><span id="ForwardProperty_Enum"><span class="void">void</span> <a href="#ForwardProperty_Enum"><span class="method">ForwardProperty_Enum</span></a> <span class="bracket">(</span> <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">value</span>, <a href="https://docs.godotengine.org/en/3.4/classes/class_string.html"><span class="type">String</span></a> <span class="param">property</span> <span class="bracket">)</span></span>: <br>
+<span class="desc">
+Helper function to forward an enum change to the Tool. Not typically called manually.
+</span></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.path", "toc.integrate"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
